@@ -13,7 +13,7 @@ class ServerNode(models.Model):
     def __str__(self):
         return f"{self.server_id} ({self.active_tasks}/{self.max_slots})"
 
-class ComputerTask(models.Model):
+class ComputeTask(models.Model):
 
     STATUS_CHOICES = [
         ('queued', 'У черзі'),
