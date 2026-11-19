@@ -56,5 +56,20 @@ services:
       - app1
       - app2
 
+  autoscaler:
+    build: ./autoscaler
+    environment:
+      DB_HOST: db
+      DB_NAME: jacobi_db
+      DB_USER: jacobi_user
+      DB_PASSWORD: jacobi_pass
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      db:
+        condition: service_healthy
+      app1:
+        condition: service_started
+
 volumes:
   postgres_data:

@@ -1,0 +1,8 @@
+﻿.venv/
+.idea/
+__pycache__/
+*.pyc
+frontend/node_modules/
+frontend/dist/
+nginx/certs/*.key
+nginx/certs/*.crt
